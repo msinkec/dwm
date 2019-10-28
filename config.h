@@ -2,11 +2,12 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Liberation Mono:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Liberation Mono:pixelsize=14:antialias=true:autohint=true" ;
+static const char *fonts[]          = { "Mononoki:style=Bold:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Mononoki:style=Bold:pixelsize=14:antialias=true:autohint=true" ;
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -86,6 +87,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_minus,  setgaps,        {.i = -3 } },
+	{ MODKEY,                       XK_plus,  setgaps,        {.i = +3 } },
+	{ MODKEY|ShiftMask,             XK_plus,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
